@@ -6,7 +6,10 @@ services:
     container_name: zookeeper
     ports:
       - "2181:2181"
-  
+    volumes:
+      - ./zookeeper/data:/data
+      - ./zookeeper/datalog:/datalog
+
   kafka:
     image: wurstmeister/kafka
     ports:
